@@ -1,38 +1,69 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
   color: black;
-  text-decoration: none;
-  font-family: "Pacifico", cursive;
-  list-style: none;
 }
 body {
-  height: 100vh;
-  width: 100vw;
+  position: relative;
+}
+.my-form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  background-color: #e5e0e06c;
+  width: 300px;
+  position: absolute;
+  top: 150px;
+  left: 500px;
+}
+.my-form input {
+  margin: 10px;
+  border: 1px solid black;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+fieldset {
+  background-color: rgba(255, 0, 255, 0.08);
+}
+.inputEmail:valid {
+  border: 4px solid green;
+  border-radius: 50%;
+}
+.inputEmail:invalid {
+  border: 4px solid red;
+  border-radius: 0%;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 .header {
+  background-color: rgb(211, 101, 89);
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  background-color: #e5e0e0;
   padding: 20px;
 }
 .logo {
-  font-size: 30px;
-  font-weight: bold;
-}
-.nav {
   display: flex;
   align-items: center;
+  font-size: larger;
 }
-.nav-menu {
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+a {
+  font-family: "Pacifico", cursive;
+}
+
+.navList {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -44,32 +75,77 @@ body {
   height: 50vh;
 }
 .openModal {
+  padding: 20px 40px;
+  font-size: 50px;
+  font-weight: 900;
+  background-color: rgb(211, 101, 89);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Pacifico", cursive;
+}
+.close {
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  border: 1px solid black;
+  border-radius: 25%;
+}
+.btn {
   padding: 10px 20px;
-  font-size: 30px;
-  background-color: #e5e0e0;
-  border-radius: 10%;
+  border-radius: 25px;
 }
-.openModal:hover {
-  opacity: 0.6;
+.text-area {
+  height: 100px;
 }
-.hamb {
+.modal-title {
+  padding-bottom: 15px;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: rgb(211, 101, 89);
+  text-align: center;
+  padding: 10px;
+  width: 25vw;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(211, 101, 89, 0.334);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.842);
+}
+.hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
+  align-items: center;
 }
-.hamb span {
+
+.hamburger span {
   width: 25px;
   height: 3px;
   background-color: black;
-  margin: 4px 0;
-  border-radius: 5px;
+  margin: 2px;
 }
-
-@media (max-width: 450px) {
-  .hamb {
+@media (max-width: 410px) {
+  .hamburger {
     display: flex;
   }
-  .nav-menu {
+  .navList {
     display: none;
   }
 }
