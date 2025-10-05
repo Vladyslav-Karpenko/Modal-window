@@ -28,13 +28,19 @@ body {
 fieldset {
   background-color: rgba(255, 0, 255, 0.08);
 }
+.name,
+.email {
+  width: 90%;
+}
 .inputEmail:valid {
   border: 4px solid green;
   border-radius: 50%;
+  width: 100%;
 }
 .inputEmail:invalid {
   border: 4px solid red;
   border-radius: 0%;
+  width: 100%;
 }
 ul {
   list-style: none;
@@ -97,6 +103,7 @@ a {
 }
 .text-area {
   height: 100px;
+  width: 100%;
 }
 .modal-title {
   padding-bottom: 15px;
@@ -133,6 +140,7 @@ a {
   display: none;
   flex-direction: column;
   align-items: center;
+  padding-right: 15px;
 }
 
 .hamburger span {
@@ -141,11 +149,28 @@ a {
   background-color: black;
   margin: 2px;
 }
-@media (max-width: 410px) {
+@media (max-width: 450px) {
   .hamburger {
     display: flex;
+    order: 1;
   }
   .navList {
     display: none;
   }
+  .modal-content {
+    width: 90vw;
+  }
+}
+.navList.open {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  right: 5px;
+  top: 40px;
+  background-color: rgb(220, 110, 98);
+  border-radius: 10px;
+  border: 1px solid black;
 }
